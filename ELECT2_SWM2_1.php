@@ -1,5 +1,6 @@
 <?php
 
+$answer = "";
 function addition($input1stNumber, $input2ndNumber) {
     return $input1stNumber + $input2ndNumber;
 }
@@ -13,7 +14,7 @@ function division($input1stNumber, $input2ndNumber) {
     return $input1stNumber / $input2ndNumber;
 }
 
-function main() {
+function calculate() {
     $is_addNum = isset($_POST['add']);
     $is_subtractNum = isset($_POST['subract']);
     $is_multiplyNum = isset($_POST['multiply']);
