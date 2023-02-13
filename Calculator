@@ -43,8 +43,6 @@ function calculate() {
             return division($input1stNumber, $input2ndNumber);
         }
     }
-
-
     return "";
 }
 
