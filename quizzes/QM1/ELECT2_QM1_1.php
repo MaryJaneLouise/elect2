@@ -1,17 +1,12 @@
 <?php
-    $input = "";
-    $result = "";
-    $resultDate = "";
+    $result = null;
 
     require_once ('Date.php');
-    use StaticMethodUsage\Date;
 
     if(isset($_POST['Submit'])) {
         $input = $_POST['input'];
         $result = Date::showDate($input);
     }
-
-    $resultDate = $result;
     ?>
 
 <!DOCTYPE html>
@@ -54,7 +49,7 @@
                 class="form-control form-control-custom"
                 type="text"
                 name="resultDate"
-                value="<?php echo $resultDate?>"
+                value="<?php echo $result?>"
                 style="margin-top: 5px; text-align: center"
                 readonly
             </input>
