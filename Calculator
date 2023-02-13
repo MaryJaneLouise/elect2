@@ -1,3 +1,57 @@
+<?php
+
+$answer = "";
+function addition($input1stNumber, $input2ndNumber) {
+    return $input1stNumber + $input2ndNumber;
+}
+function subtraction($input1stNumber, $input2ndNumber) {
+    return $input1stNumber - $input2ndNumber;
+}
+function multiplication($input1stNumber, $input2ndNumber) {
+    return $input1stNumber * $input2ndNumber;
+}
+function division($input1stNumber, $input2ndNumber) {
+    return $input1stNumber / $input2ndNumber;
+}
+
+function calculate() {
+    $addNum = isset($_POST['btnAdd']);
+    $subtractNum = isset($_POST['btnSubtract']);
+    $multiplyNum = isset($_POST['btnMultiply']);
+    $divisionNum = isset($_POST['btnDivide']);
+
+    if ($addNum || $subtractNum || $multiplyNum || $divisionNum) {
+        if (!isset($_POST['input1stNumber']) || !isset($_POST['input2ndNumber'])) {
+            return "";
+        }
+        $input1stNumber = $_POST['input1stNumber'];
+        $input2ndNumber = $_POST['input2ndNumber'];
+
+        if ($addNum) {
+            return addition($input1stNumber, $input2ndNumber);
+        }
+        if ($subtractNum) {
+            return subtraction($input1stNumber, $input2ndNumber);
+        }
+        if ($multiplyNum) {
+            return multiplication($input1stNumber, $input2ndNumber);
+        }
+        if ($divisionNum) {
+            if ($input2ndNumber == 0) {
+                return "This cannot be divided by zero.";
+            }
+            return division($input1stNumber, $input2ndNumber);
+        }
+    }
+
+
+    return "";
+}
+
+$answer = calculate();
+?>
+
+
 <DOCTYPE !html>
     <html>
     <head>
@@ -12,75 +66,30 @@
             <form action="" method="POST" name="simpleCalculator-form">
                 <div class="mb-3">
                     <label for="input1stNumber" class="form-label">1st Number</label>
-                    <input id="input1stNumber" class="form-control" type="number" name="firstNumber" placeholder="Ex. 19" required/>
+                    <input id="input1stNumber" class="form-control" type="number" name="inputfirstNumber" placeholder="Ex. 19" required/>
                 </div>
                 <div class="mb-3">
                     <label for="input2ndNumber" class="form-label">2nd Number</label>
-                    <input id="input2ndNumber" class="form-control" type="number" name="secondNumber" placeholder="Ex. 30" required/>
+                    <input id="input2ndNumber" class="form-control" type="number" name="inputsecondNumber" placeholder="Ex. 30" required/>
                 </div>
                 <div style="text-align: center;">
                     <input id="btnAdd" value="+" type="submit" class="btn btn-primary"/>
                     <input id="btnSubtract" value="-" type="submit" class="btn btn-primary"/>
                     <input id="btnMultiply" value="x" type="submit" class="btn btn-primary"/>
-                    <input id="btnDivision" value="/" type="submit" class="btn btn-primary"/>
+                    <input id="btnDivide" value="/" type="submit" class="btn btn-primary"/>
                 </div>
 
                 <br><br>
                 <div class="mb-3">
-                    <label for="result" class="form-label">Result:</label>
-                    <input id="result" class="form-control" type="number" name="result" value="?php echo $result; ?>"/>
-                </div>
+                    <label for="resultNum" class="form-label">Result:</label>
+                    <input id="result" class="form-control form-control-custom" type="text" name="result" value="<?php echo $answer?>"/>
 
+                </div>
+                <div style="text-align: center">
+                    <br>
+                    <?php echo $answer?>
+                </div>
             </form>
         </div>
     </body>
-
-    <?php
-        function addNumbers() {
-            if(isset($_POST['submit'])) {
-                $input1stNumber = $_POST['input1stNumber'];
-                $input2ndNumber = $_POST['input2ndNumber'];
-                $result =  $input1stNumber + $input2ndNumber;
-            }
-        }
-        function subtractNumbers() {
-            if(isset($_POST['submit'])) {
-                $input1stNumber = $_POST['input1stNumber'];
-                $input2ndNumber = $_POST['input2ndNumber'];
-                $result =  $input1stNumber - $input2ndNumber;
-            }
-        }
-        function divisionNumbers() {
-            if(isset($_POST['submit'])) {
-                $input1stNumber = $_POST['input1stNumber'];
-                $input2ndNumber = $_POST['input2ndNumber'];
-                $result = $input1stNumber / $input2ndNumber;
-            }
-        }
-        function multiplicationNumbers() {
-            if(isset($_POST['submit'])) {
-                $input1stNumber = $_POST['input1stNumber'];
-                $input2ndNumber = $_POST['input2ndNumber'];
-                $result = $input1stNumber + $input2ndNumber;
-            }
-        }
-
-    if ($_POST['submit'] == "/" && ($_POST['input1stNumber'] == 0 || $_POST['input1stNumber'] == 0)) {
-        $result = "Cannot divide by 0";
-    }
-    else if ($_POST['submit'] == "/") {
-        divisionNumbers();
-    }
-    else if ($_POST['submit'] == "*") {
-        multiplicationNumbers();
-    }
-    else if ($_POST['submit'] == "+") {
-        addNumbers();
-    }
-    else if ($_POST['submit'] == "-") {
-        subtractNumbers();
-    }
-    
-    ?>
-
     </html>
