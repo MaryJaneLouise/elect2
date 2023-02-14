@@ -42,6 +42,17 @@
                     <li><a href="#">Test1</a></li>
                 </ul>
             </li>
+            <li class="services">
+                <a href="#">Settings</a>
+
+                <!-- DROPDOWN MENU -->
+                <ul class="dropdown">
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">???</a></li>
+                    <li><a href="#">Test1</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Logout</a></li>
         </div>
     </ul>
 </nav>
