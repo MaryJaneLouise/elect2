@@ -94,7 +94,7 @@ $result = countryFullDetails();
 ?>
 
 <!DOCTYPE html>
-    <html>
+<html>
     <head>
         <title>Countries</title>
 

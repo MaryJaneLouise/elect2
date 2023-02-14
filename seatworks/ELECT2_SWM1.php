@@ -1,4 +1,4 @@
-<!DOCTTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>ELECT2 ActM1</title>
