@@ -24,7 +24,6 @@
 
             //2nd number
             echo "FizzBuzz";
-
             $numX = 0;
 
             while ($numX < 20) {
