@@ -310,7 +310,16 @@ input[type="submit"]:hover{
   width: 100%;
 }
 
-#home, #swm1, #swm2\.1, #about, #contact {
+.time {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+/*#home, #swm1, #swm2\.1, #about, #contact {
   padding: 50px;
   height: 1000px;
-}
+}*/
