@@ -15,7 +15,7 @@
 <body>
 <?php
 
-$ans = "";
+$answer = "";
 function addition($n1, $n2) {
     return $n1 + $n2;
 }
@@ -52,7 +52,7 @@ function finalAnswer() {
     }
     return "";
 }
-$ans = finalAnswer();
+$answer = finalAnswer();
 ?>
 
 <div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
@@ -88,7 +88,7 @@ $ans = finalAnswer();
         <br><br>
         <div class="mb-3">
             <label for="resultNum" class="form-label">Result:</label>
-            <input id="result" class="form-control form-control-custom" type="text" name="result" value="<?php echo $ans ?>"/>
+            <input id="result" class="form-control form-control-custom" type="text" name="result" value="<?php echo $answer ?>"/>
         </div>
     </form>
 </div>
