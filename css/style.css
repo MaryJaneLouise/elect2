@@ -1,4 +1,4 @@
-/* UTILITIES */
+/* UTILITIES
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ li {
   list-style: none;
 }
 
-/* NAVBAR STYLING STARTS */
+/* NAVBAR STYLING STARTS
 .navbar {
   display: flex;
   align-items: center;
@@ -31,12 +31,12 @@ li {
   color: #fff;
 }
 
-/* LOGO */
+/* LOGO
 .logo {
   font-size: 32px;
 }
 
-/* NAVBAR MENU */
+/* NAVBAR MENU
 .menu {
   display: flex;
   gap: 1em;
@@ -53,7 +53,7 @@ li {
   padding: 5px 14px;
 }
 
-/* DROPDOWN MENU */
+/* DROPDOWN MENU
 .services {
   position: relative;
 }
@@ -61,7 +61,7 @@ li {
 .dropdown {
   background-color: rgb(71, 54, 124);
   padding: 1em 0;
-  position: absolute; /*WITH RESPECT TO PARENT*/
+  position: absolute; /*WITH RESPECT TO PARENT
   display: none;
   border-radius: 8px;
   top: 35px;
@@ -87,19 +87,19 @@ li {
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
-/* CHECKBOX HACK */
+/* CHECKBOX HACK
 input[type=checkbox]{
   display: none;
 }
 
-/*HAMBURGER MENU*/
+/*HAMBURGER MENU
 .hamburger {
   display: none;
   font-size: 24px;
   user-select: none;
 }
 
-/* APPLYING MEDIA QUERIES */
+/* APPLYING MEDIA QUERIES
 @media (max-width: 768px) {
   .menu {
     display:none;
@@ -138,7 +138,7 @@ input[type=checkbox]{
   .dropdown li:hover {
     background-color: #4c9e9e;
   }
-}
+} */
 
 /*playground/login*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
@@ -253,4 +253,64 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
   text-decoration: underline;
+}
+
+
+.navbar {
+  background-color: #333;
+  overflow: auto;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style-type: none;
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #111;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  background-color: #333;
+}
+
+.dropdown-menu li a {
+  color: white;
+  padding: 10px 16px;
+  display: block;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#home, #swm1, #swm2\.1, #about, #contact {
+  padding: 50px;
+  height: 1000px;
 }
