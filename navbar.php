@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>NavigationPage</title>
-    <base target="pages">
-</head>
+<script type="text/javascript">
+    function changeFrame(link) {
+        document.getElementById("content-frame").src = link;
+    }
+</script>
 
-<body>
-<table style="font-size:25px">
-    <tr>
-        <th>Navigation Page
-    </tr>
-    <tr>
-        <td><a href="intro_webpage.html" target="pagedisplay">Home Page</a>
-    </tr>
-    <td><a href="link_personal_info.html" target="pagedisplay">Personal Information</a>
-        </tr>
-        <tr>
-            <td><a href="link_academic_info.html" target="pagedisplay">Academic Information</a>
-        </tr>
-        <tr>
-            <td><a href="link_hobbiesskillstalents.html" target="pagedisplay">Hobbies/Skills/Talents</a>
-        </tr>
-        <tr>
-            <td><a href="link_serminars_attended.html" target="pagedisplay">Seminars Attended</a>
-        </tr>
-        <tr>
-            <td><a href="link_activities_attended.html" target="pagedisplay">Activities Attended/Conducted</a>
-        </tr>
-        <tr>
-            <td><a href="link_character_references.html" target="pagedisplay">Character Reference</a>
-        </tr>
-    </td>
-</table>
-</body>
+<div class="navbar">
+    <li><a href="#" onclick="changeFrame('lectures.php')">Lectures</a></li>
+    <li class="dropdown">
+        <a href="#">Seatworks</a>
 
-</html>
+        <!-- DROPDOWN MENU -->
+        <ul class="dropdown-menu">
+            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM1.php')">SWM1</a></li>
+            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_1.php')">SWM2.1</a></li>
+            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_2.php')">SWM2.2</a></li>
+        </ul>
+    </li>
+    <li class="services">
+        <a href="">Quizzes</a>
+
+        <!-- DROPDOWN MENU -->
+        <ul class="dropdown-menu">
+            <li><a href="#">Test1</a></li>
+            <li><a href="#">Test1</a></li>
+            <li><a href="#">Test1</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#">Settings</a>
+
+        <!-- DROPDOWN MENU -->
+        <ul class="dropdown-menu">
+            <li><a href="#">Account</a></li>
+            <li><a href="#">???</a></li>
+            <li><a href="#">Test1</a></li>
+        </ul>
+    </li>
+    <li><a href="playground/login.php">Logout</a></li>
+</div>
