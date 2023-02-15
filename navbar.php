@@ -37,4 +37,5 @@
         </ul>
     </li>
     <li><a href="playground/login.php">Logout</a></li>
+    <li class="services" id="time" style="float:right"></li>
 </div>
