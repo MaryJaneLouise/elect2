@@ -16,14 +16,14 @@
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_2.php')">SWM2.2</a></li>
         </ul>
     </li>
-    <li class="services">
-        <a href="">Quizzes</a>
+    <li class="dropdown">
+        <a href="#">Quizzes</a>
 
         <!-- DROPDOWN MENU -->
         <ul class="dropdown-menu">
             <li><a href="#">Test1</a></li>
-            <li><a href="#">Test1</a></li>
-            <li><a href="#">Test1</a></li>
+            <li><a href="#">Test2</a></li>
+            <li><a href="#">Test3</a></li>
         </ul>
     </li>
     <li class="dropdown">

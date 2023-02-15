@@ -1,108 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
 <?php
 
-$answer = "";
-function addition($input1stNumber, $input2ndNumber) {
-    return $input1stNumber + $input2ndNumber;
+$ans = "";
+function addition($n1, $n2) {
+    return $n1 + $n2;
 }
-function subtraction($input1stNumber, $input2ndNumber) {
-    return $input1stNumber - $input2ndNumber;
+function subtraction($n1, $n2) {
+    return $n1 - $n2;
 }
-function multiplication($input1stNumber, $input2ndNumber) {
-    return $input1stNumber * $input2ndNumber;
+function multiplication($n1, $n2) {
+    return $n1 * $n2;
 }
-function division($input1stNumber, $input2ndNumber) {
-    return $input1stNumber / $input2ndNumber;
+function division($n1, $n2) {
+    if ($n2 == 0) {
+        return "You cannot divide a number by zero.";
+    } else
+        return $n1 / $n2;
 }
 
-function calculate() {
-    $is_addNum = isset($_POST['add']);
-    $is_subtractNum = isset($_POST['subract']);
-    $is_multiplyNum = isset($_POST['multiply']);
-    $is_divisionNum = isset($_POST['divide']);
+function finalAnswer() {
+    $n1 = $_POST['n1'];
+    $n2 = $_POST['n2'];
 
-    if ($is_addNum || $is_subtractNum || $is_multiplyNum || $is_divisionNum) {
-        $input1stNumber = $_POST['1stNumber'];
-        $input2ndNumber = $_POST['2ndNumber'];
-
-        if ($is_addNum) {
-            return addition($input1stNumber, $input2ndNumber);
-        }
-        if ($is_subtractNum) {
-            return subtraction($input1stNumber, $input2ndNumber);
-        }
-        if ($is_multiplyNum) {
-            return multiplication($input1stNumber, $input2ndNumber);
-        }
-        if ($is_divisionNum) {
-            if ($input2ndNumber == 0) {
-                return "This cannot be divided by zero.";
-            }
-            return division($input1stNumber, $input2ndNumber);
-        }
+    $operandAdd = isset($_POST['add']);
+    $operandSubtract = isset($_POST['subtract']);
+    $operandMultiply = isset($_POST['multiply']);
+    $operandDivide = isset($_POST['divide']);
+    if ($operandAdd || $operandSubtract || $operandMultiply || $operandDivide) {
+        if ($operandAdd)
+            return addition($n1, $n2);
+        if($operandSubtract)
+            return subtraction($n1, $n2);
+        if($operandMultiply)
+            return multiplication($n1, $n2);
+        if($operandDivide)
+            return division($n1, $n2);
     }
     return "";
 }
-
-$answer = calculate();
+$ans = finalAnswer();
 ?>
 
-
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Simple Calculator</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-              crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-                crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-
-        <div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
-            <form
-                    action=""
-                    method="POST"
-                    name="simpleCalculator-form">
-                <div class="mb-3">
-                    <label for="input-1stNumber" class="form-label">1st Number</label>
-                    <input
-                            id="input-1stNumber"
-                            class="form-control"
-                            type="number"
-                            name="1stNumber"
-                            required>
-                </div>
-                <div class="mb-3">
-                    <label for="input-2ndNumber" class="form-label">2nd Number</label>
-                    <input
-                            id="input-2ndNumber"
-                            class="form-control"
-                            type="number"
-                            name="2ndNumber"
-                            required>
-                </div>
-                <div style="text-align: center;">
-                    <input id="add" value="+" type="submit" class="btn btn-primary"/>
-                    <input id="subtract" value="-" type="submit" class="btn btn-primary"/>
-                    <input id="multiply" value="x" type="submit" class="btn btn-primary"/>
-                    <input id="divide" value="/" type="submit" class="btn btn-primary"/>
-                </div>
-
-                <br><br>
-                <div class="mb-3">
-                    <label for="resultNum" class="form-label">Result:</label>
-                    <!-- <input id="result" class="form-control form-control-custom" type="text" name="result" value=""/> -->
-                </div>
-                <div style="text-align: center">
-                    <br>
-                    <?php echo $answer ?>
-                </div>
-            </form>
+<div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
+    <form
+            action=""
+            method="POST"
+            name="simpleCalculator-form">
+        <div class="mb-3">
+            <label for="input-1stNumber" class="form-label">1st Number</label>
+            <input
+                    id="input-1stNumber"
+                    class="form-control"
+                    type="number"
+                    name="n1"
+                    required>
         </div>
-    </body>
-    </html>
+        <div class="mb-3">
+            <label for="input-2ndNumber" class="form-label">2nd Number</label>
+            <input
+                    id="input-2ndNumber"
+                    class="form-control"
+                    type="number"
+                    name="n2"
+                    required>
+        </div>
+        <div style="text-align: center;">
+            <input name="add" value="ADD" type="submit" class="btn btn-primary"/>
+            <input name="subtract" value="SUBTRACT" type="submit" class="btn btn-primary"/>
+            <input name="multiply" value="MULTIPLY" type="submit" class="btn btn-primary"/>
+            <input name="divide" value="DIVIDE" type="submit" class="btn btn-primary"/>
+        </div>
+
+        <br><br>
+        <div class="mb-3">
+            <label for="resultNum" class="form-label">Result:</label>
+            <input id="result" class="form-control form-control-custom" type="text" name="result" value="<?php echo $ans ?>"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
