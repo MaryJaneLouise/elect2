@@ -5,7 +5,9 @@
     </head>
 
     <body>
-        <?php
+
+
+    <?php
             //1st number
             echo "Fibonacci Sequence up to 20 numbers<br>";
             $numOne = 0;
