@@ -4,7 +4,7 @@
     <?php $user = "JerJerKing"; ?>
 
     <head>
-        <title>Test Website</title>
+        <title>Lecture 1</title>
     </head>
 
     <body>
@@ -123,88 +123,5 @@
             echo "Jericho's grade in Math is ". $main['Jericho']["Math"]. ".<br>";
             echo "Jericho's grade in Math is ". $main['Jericho']["DE"]. ".<br>";
         ?>
-
-
-        <?php
-        // class Fruit{
-        //PROPERTIES
-        // public $name;
-        // public $color;
-
-
-        // //METHODS
-        // function setName($name){
-        //     $this->name = $name;
-        // }
-
-        // function getName(){
-        //     return $this->name;
-        // }
-
-        // function setColor($color){
-        //     $this->color = $color;
-        // }
-
-        // function getColor(){
-        //     return $this->color;
-        // }
-
-    // }
-
-        class Fruit{
-            public $name;
-            public $color;
-
-            function __construct($name,$color){
-                $this->name = $name;
-                $this->color = $color;
-            }
-
-            function getName(){
-                return  $this->name;
-            }
-
-            function getColor(){
-                return $this->color;
-            }
-        }
-
-        class Strawberry extends Fruit{
-            public function message(){
-                echo "<br>I am here";
-            }
-        }
-
-        $berry = new Strawberry("Strawberry, ", "Red");
-        echo $berry->getName();
-        echo $berry->getColor();
-        $berry->message();
-
-        $fruit = new Fruit("<br>Apple, ", "Red");
-        $fruit2 = new Fruit("<br>Banana, ", "Yellow");
-
-
-        echo $fruit->getName();
-        echo $fruit->getColor();
-
-
-        echo "<br>";
-        echo "<br>";
-
-        echo $fruit2->getName();
-        echo $fruit2->getColor();
-
-        $Fruit = new Fruit();
-        $Fruit->setName("Apple");
-        $Fruit->setColor("Red");
-
-        class Strawberry2 extends Fruit {
-            private $weight;
-            public function message() {
-
-            }
-        }?>
-
-
     </body>
 </html>
