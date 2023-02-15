@@ -48,8 +48,8 @@ function countryFullDetails() {
             "countryDetails" => "About 275 square miles, smaller than the State of Rhode Island, and inhabited by five million people from four major communities."
         ),
         "South Africa" => array(
-        "countryCapital" => "Cape Town, Pretoria, Bloemfontein",
-        "countryDetails" => "Currently ranked 31 of the major economies against other countries."
+            "countryCapital" => "Cape Town, Pretoria, Bloemfontein",
+            "countryDetails" => "Currently ranked 31 of the major economies against other countries."
         ),
         "Zimbabwe" => array(
             "countryCapital" => "Harare",
@@ -94,7 +94,7 @@ $result = countryFullDetails();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Countries</title>
 
