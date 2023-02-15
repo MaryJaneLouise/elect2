@@ -13,7 +13,13 @@ if(isset($_POST['logout'])) {
     <title>Portfolio</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-
+    <script>
+        function updateTitle() {
+            var contentFrame = document.getElementById("content-frame");
+            var pageTitle = contentFrame.contentDocument.title;
+            document.title = pageTitle;
+        }
+    </script>
 </head>
 <body >
 <?php include('navbar.php'); ?>
@@ -23,7 +29,8 @@ if(isset($_POST['logout'])) {
         height="100%"
         width="100%"
         style="border:none;"
-        src="lectures.php">
+        src="lectures/Lecture_Simple.php"
+        onload="updateTitle()">
 </iframe>
 
 <script type="text/javascript">

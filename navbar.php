@@ -5,7 +5,15 @@
 </script>
 
 <div class="navbar">
-    <li><a href="#" onclick="changeFrame('lectures.php')">Lectures</a></li>
+    <li class="dropdown">
+        <a href="#">Lectures</a>
+
+        <ul class="dropdown-menu">
+            <li><a href="#" onclick="changeFrame('lectures/Lecture_Simple.php')">Lecture 1</a></li>
+            <li><a href="#" onclick="changeFrame('lectures/Lecture_OOP.php')">Lecture 2</a></li>
+        </ul>
+
+    </li>
     <li class="dropdown">
         <a href="#">Seatworks</a>
 
@@ -37,5 +45,5 @@
         </ul>
     </li>
     <li><a href="playground/login.php">Logout</a></li>
-    <li class="services" id="time" style="float:right"></li>
+    <li class="time" id="time" style="float:right"></li>
 </div>
