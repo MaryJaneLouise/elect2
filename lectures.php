@@ -8,9 +8,9 @@
     </head>
 
     <body>
-        <!-- <h1>Hello <?php echo $user; ?></h1> -->
+        <h1>Hello <?php echo $user; ?></h1>
 
-        <!-- <?php
+         <?php
              $num1 = 30;
              $num2 = 20;
 
@@ -122,7 +122,7 @@
 
             echo "Jericho's grade in Math is ". $main['Jericho']["Math"]. ".<br>";
             echo "Jericho's grade in Math is ". $main['Jericho']["DE"]. ".<br>";
-        ?> -->
+        ?>
 
 
         <?php ?>
