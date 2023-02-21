@@ -26,7 +26,7 @@
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM1.php')">SWM1</a></li>
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_1.php')">SWM2.1</a></li>
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_2.php')">SWM2.2</a></li>
-            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_2.php')">SWM3</a></li>
+            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM3.php')">SWM3</a></li>
         </ul>
     </li>
     <li class="dropdown">
