@@ -42,6 +42,8 @@ class car
         return $this->year;
     }
 
-
+public function __toString() {
+        return $this->year . " " . $this->make . " " .  $this->model;
+}
 
 }

@@ -1,22 +1,17 @@
 <?php
-    require_once ('SUP_Shape.php');
-    $surfaceArea = "";
-    $length = "";
-    $volume = "";
+    require_once ('car.php');
     $msg = "";
+    $carOptions = array(
+        new  car('Honda', 'Civic', 2022),
+        new  car('Toyota', 'Innova', 2022),
+        new  car('Honda', 'Civic', 2022)
+    );
 
-    if(isset($_POST['Submit'])) {
-        if (isset($_POST['Shapes']) && $_POST['length']) {
-            $typeShape = $_POST['Shapes'];
-            $length = $_POST['length'];
-
-            $shape = $typeShape == "sphere" ? new Sphere($length) : new Cube($length);
-
-            $length = ($typeShape == "Sphere" ? "Radius:" : "Side Length") . $length;
-            $surfaceArea = "Surface Area: " . round($shape->shapeArea(), 2);
-            $volume = "Volume: " . round($shape->shapeVolume(), 2);
-        }
-    }
+    if(isset($_POST['Submit'])){
+        $selectedIndex = $_POST['car'];
+        $selectedCar = $carOptions[$selectedIndex];
+        $msg = "Selected Car: " .$selectedCar;
+}
     ?>
 
 <!DOCTYPE html>
@@ -28,38 +23,44 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
                 crossorigin="anonymous"></script>
-        <title>Example</title>
+        <title>Car Example with Forms</title>
     </head>
 
     <body>
         <div class="d-flex align-items-center justify-content-center vh-100" style="flex-direction: column;">
             <form method="POST">
-                <div class="form-group">
-                    <label>Choose an option:</label>
-                    <div class="input-group mb-3">
-                        <select class="form-select" name="Shapes">
-                            <option value="cube">Cube</option>
-                            <option value="sphere">Sphere</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="input-length" class="form-label">Value:</label>
-                    <input
-                            id="input-1stNumber"
-                            class="form-control"
-                            type="number"
-                            name="length"
-                            required>
-                </div>
-                <div style="text-align: center">
-                    <input name="Submit" value="Submit" type="submit" class="btn btn-primary">
-                </div>
-                <div class="mb-3">
-                    <?php echo $surfaceArea; ?> <br>
-                    <?php echo $volume; ?>
+                <label>Choose a Car:</label>
+                <select id="options" class="form-select" name="car">
+                    <?php foreach ($carOptions as $index => $car):?>
+                        <option value="<?= $index ?>" <?= isset($_POST['car']) && $_POST['car'] == $index ? 'selected' : ''?>>
+                            <?= $car?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
+                <div style="text-align: center; margin-top: 10px">
+                    <input name="Submit" value="Submit" type="submit" class="btn btn-primary"/>
                 </div>
             </form>
+            <div id="result" style="text-align: center; margin-top: 10px" >
+                <?php echo $msg; ?>
+            </div>
         </div>
+
+        <script>
+            var options = document.getElementById("options")
+            var results = document.getElementById("result")
+
+            options.onchange = function() {
+                var index = options.value
+
+                if (index == 0) {
+                    results.innerText = "Honda Civic 2022"
+                } else if (index == 1) {
+                    results.innerText = "Toyota Innova 2022"
+                } else {
+                    results.innerText = "Honda Civic 1980"
+                }
+            }
+        </script>
     </body>
 </html>
