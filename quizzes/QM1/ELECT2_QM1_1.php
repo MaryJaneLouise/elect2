@@ -49,7 +49,7 @@
                 class="form-control form-control-custom"
                 type="text"
                 name="resultDate"
-                value="<?php echo $reslt?>"
+                value="<?php echo $result?>"
                 style="margin-top: 5px; text-align: center"
                 readonly
             </input>
