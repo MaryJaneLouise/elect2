@@ -39,6 +39,7 @@
             <input
                 name="ClearAllVal"
                 value="Clear All Fields"
+                type="button"
                 onclick="clearFields()"
                 class="btn btn-outline-primary"/>
         </div>
