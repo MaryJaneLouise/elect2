@@ -1,9 +1,8 @@
 <?php
-require_once ('Product.php');
+    require_once('Product.php');
 
-
-if(isset($_POST['Submit'])) {
-    if($_POST['length'] > 0) {
+if (isset($_POST['Submit'])) {
+    if ($_POST['length'] > 0) {
         if (isset($_POST['Shapes']) && $_POST['length']) {
             $typeShape = $_POST['Shapes'];
             $length = $_POST['length'];
