@@ -34,9 +34,13 @@
 
         <!-- DROPDOWN MENU -->
         <ul class="dropdown-menu">
-            <li><a href="#">Test1</a></li>
-            <li><a href="#">Test2</a></li>
-            <li><a href="#">Test3</a></li>
+            <a href="#">Quiz 1</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_1.php')">Quiz 1.1</a></li>
+                <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_2.php')">Quiz 1.2</a></li>
+                <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_3.php')">Quiz 1.3</a></li>
+            </ul>
         </ul>
     </li>
     <li class="dropdown">
