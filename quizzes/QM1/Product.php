@@ -9,8 +9,6 @@ abstract class Product {
         $this->productPrice = $productPrice;
     }
 
-    abstract function display();
-
     public function getProductName() {
         return $this->productName;
     }
@@ -19,9 +17,7 @@ abstract class Product {
         return $this->productPrice;
     }
 
-    public function setProductPrice($productPrice) {
-        $this->productPrice = $productPrice;
-    }
+    abstract function displayMainDetails();
 }
 
 class Book extends Product {
@@ -34,19 +30,11 @@ class Book extends Product {
         $this->bookGenre = $bookGenre;
     }
 
-    public function getBookAuthor() {
-        return $this->bookAuthor;
-    }
-
-    public function getBookGenre() {
-        return $this->bookGenre;
-    }
-
-    public function display() {
+    public function displayMainDetails() {
         return "<br>Name: " . $this->productName
+            . "<br>Price: " . $this->productPrice
             . "<br>Author: " . $this->bookAuthor
-            . "<br>Genre: " . $this->bookGenre
-            . "<br>Price: " . $this->productPrice;
+            . "<br>Genre: " . $this->bookGenre;
     }
 }
 
@@ -60,18 +48,10 @@ class Movie extends Product {
         $this->movieRating = $movieRating;
     }
 
-    public function getMovieDirector() {
-        return $this->movieDirector;
-    }
-
-    public function getMovieRating() {
-        return $this->movieRating;
-    }
-
-    public function display() {
+    public function displayMainDetails() {
         return "<br>Name: " . $this->productName
+            . "<br>Price: " . $this->productPrice
             . "<br>Director: " . $this->movieDirector
-            . "<br>Rating: " . $this->movieRating
-            . "<br>Price: " . $this->productPrice;
+            . "<br>Rating: " . $this->movieRating;
     }
 }
