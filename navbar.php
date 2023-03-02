@@ -27,6 +27,7 @@
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_1.php')">SWM2.1</a></li>
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM2_2.php')">SWM2.2</a></li>
             <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM3.php')">SWM3</a></li>
+            <li><a href="#" onclick="changeFrame('seatworks/ELECT2_SWM4.php')">SWM4</a></li>
         </ul>
     </li>
     <li class="dropdown">
@@ -35,8 +36,7 @@
         <!-- DROPDOWN MENU -->
         <ul class="dropdown-menu">
             <a href="#">Quiz 1</a>
-
-            <ul class="dropdown-menu">
+            <ul class="submenu">
                 <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_1.php')">Quiz 1.1</a></li>
                 <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_2.php')">Quiz 1.2</a></li>
                 <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_3.php')">Quiz 1.3</a></li>
