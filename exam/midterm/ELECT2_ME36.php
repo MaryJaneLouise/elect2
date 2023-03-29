@@ -10,29 +10,24 @@
         public $i;
         public $j;
 
-
         public function __construct($i, $j) {
             $this->i = $i;
             $this->j = $j;
         }
 
-        function add()
-        {
+        function add() {
             return $this->i + $this->j;
         }
 
-        function subtract()
-        {
+        function subtract() {
             return $this->i - $this->j;
         }
 
-        function multiply()
-        {
+        function multiply() {
             return $this->i * $this->j;
         }
 
-        function divide()
-        {
+        function divide() {
             return $this->i / $this->j;
         }
     }

@@ -1,14 +1,6 @@
 <?php
 
-abstract class Calculator {
-    abstract function add($i, $j);
-    abstract function subtract($i, $j);
-    abstract function multiply($i, $j);
-    abstract function divide($i, $j);
-}
-
-
-class Products extends Calculator {
+class Products {
     protected string $name;
     protected float $price;
     protected float $weight;
@@ -31,23 +23,7 @@ class Products extends Calculator {
         return $this->weight;
     }
 
-    function add($i, $j) {
-        return $i + $j;
-    }
-
-    function subtract($i, $j) {
-        return $i - $j;
-    }
-
-    function multiply($i, $j) {
-        return $i * $j;
-    }
-
-    public function divide($i, $j) {
-        return $i / $j;
-    }
-
     public function __toString(): string {
-        return "$this->name ($this->weight lb): " . number_format($this->price, 2, '.',',');
+        return "$this->name ($this->weight lb): ₱ " . number_format($this->price, 2, '.',',');
     }
 }?>

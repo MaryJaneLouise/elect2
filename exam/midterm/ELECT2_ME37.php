@@ -1,34 +1,32 @@
 <?php
 require_once 'Products.php';
-
-$resultProduct = "";
+require_once 'User.php';
 
 $products = array(
-    new Products("Keyboard", 400, 1.00,false),
-    new Products("Mouse",200, 1.00,false),
-    new Products("Laptop", 52000, 10.00,false),
-    new Products("Charger", 5000, 5.00,false),
+    new Products("Keyboard", 400.00, 1.00),
+    new Products("Mouse",200.00, 1.00),
+    new Products("Laptop", 52000.00, 10.00),
+    new Products("Charger", 5000.00, 5.00),
+    new Products("Calculator", 50.00, 5.00),
 );
+
+$user = null;
 
 $priceSubTotal = null;
 $priceTotal = null;
 $moneyLimit = null;
-$selectedProducts = array();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_POST['products'])) {
-        $user = new User($_POST['name'], $_POST['products']);
         $selectedProduct = $_POST['products'];
+        $selectedProducts = array();
 
-        $resultProduct .= "Selected products:<br>";
-        foreach ($selectedProduct as $productIndex) {
-            $product = $products[$productIndex];
+        foreach ($selectedProduct as $productIndex => $selectedProductsIndex) {
+            $product = $products[$selectedProductsIndex];
             $selectedProducts[$productIndex] = $product;
-            $priceSubTotal += $product->getProductPrice();
         }
 
-        $priceTotal = number_format($priceSubTotal, 2, '.',',');
-
+        $user = new User($_POST['name'], $_POST['moneyLimit'], $selectedProducts);
     } else {
         $resultProduct = "Invalid input!";
     }
@@ -69,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input
                 id="input-moneyLimit"
                 class="form-control"
-                type="text"
+                type="number"
                 name="moneyLimit"
                 required>
         </div>
@@ -102,24 +100,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
     <div style="text-align: center">
         <?php
-            if (empty($selectedProducts) == false) {
-                if ($priceTotal > $moneyLimit) {
+            if (!empty($selectedProducts)) {
+                $priceTotal = $user->getTotalSpend();
+                if ($priceTotal > $user->getMoneyLimit()) {
                     echo "<br>Your spending limit has been reached.";
-                    echo "<br>Money Limit: ₱ $moneyLimit";
-                    echo "<br>Total Price: ₱ $priceTotal";
+                    echo "<br>Total Price: ₱ " . number_format($priceTotal, 2, '.',',');
+                    echo "<br>Money Limit: ₱ " . number_format($user->getMoneyLimit(), 2, '.',',');;
                 }
                 else {
                     foreach ($selectedProducts as $product) echo $product . "<br>";
-                    if ($priceTotal != null) echo "<br>Total Price: ₱" . number_format($priceTotal, 2, '.',',') . "<br>";
-                    echo "<br>Money Limit: ₱" . number_format($moneyLimit, 2, '.',',') . "<br>";
-                    echo "<br>Remaining Balance: ₱" . number_format($moneyLimit - $priceTotal, 2, '.',',');;
+
+                    if ($priceTotal != null) {
+                        echo "<br>Total Price: ₱ " . number_format($priceTotal, 2, '.',',');
+                        echo "<br>Money Limit: ₱ " . number_format($user->getMoneyLimit(), 2, '.',',');
+                        echo "<br>Remaining Balance: ₱ " . number_format($user->getMoneyLimit() - $priceTotal, 2, '.',',');
+                    }
                 }
             }
         ?>
-        <?php echo '<br/> '. $resultProduct; ?>
-        <?php echo '<br/> Total Price: ₱ '. $priceTotal; ?>
     </div>
-
 </div>
 
 <script>
