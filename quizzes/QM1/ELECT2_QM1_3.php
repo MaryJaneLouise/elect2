@@ -114,7 +114,7 @@
                         class="form-control form-control-custom"
                         type="text"
                         name="result13thMonth"
-                        value="<?php echo $worker->calculate13MonthPay()?>"
+                        value="₱ <?php echo $worker->calculate13MonthPay()?>"
                         style="margin-top: 5px; text-align: center"
                         readonly
                 </input>
@@ -127,7 +127,7 @@
                         class="form-control form-control-custom"
                         type="text"
                         name="resultHourlyRate"
-                        value="<?php echo $worker->calculateHourlyRate()?>"
+                        value="₱ <?php echo $worker->calculateHourlyRate()?>"
                         style="margin-top: 5px; text-align: center"
                         readonly
                 </input>

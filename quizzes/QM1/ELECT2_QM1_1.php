@@ -1,6 +1,5 @@
 <?php
     $result = null;
-
     require_once ('Date.php');
 
     if(isset($_POST['Submit'])) {

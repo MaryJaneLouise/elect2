@@ -1,5 +1,6 @@
 <?php
     require_once('Product.php');
+    $resultProduct = null;
 
     if (isset($_POST['Submit'])) {
         $typeProduct = $_POST['option'];
