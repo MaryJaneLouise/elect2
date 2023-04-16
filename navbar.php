@@ -6,7 +6,7 @@
 
 <div class="navbar">
     <li class="dropdown">
-        <a href="#">Lectures</a>
+        <a href="#">Basic Lectures</a>
 
         <ul class="dropdown-menu">
             <li><a href="#" onclick="changeFrame('lectures/Lecture_Simple.php')">Basics</a></li>
@@ -15,8 +15,9 @@
             <li><a href="#" onclick="changeFrame('lectures/Lecture_Interfaces.php')">OOP Interfaces</a></li>
             <li><a href="#" onclick="changeFrame('lectures/Lecture_Traits.php')">OOP Traits</a></li>
             <li><a href="#" onclick="changeFrame('lectures/Lecture_CarEx.php')">OOP Form Example</a></li>
+            <li><a href="#" onclick="changeFrame('lectures/Lecture_Checkboxes.php')">OOP Form Checkboxes</a></li>
+            <li><a href="#" onclick="changeFrame('lectures/Lecture_IntegSer.php')">SQL Initiation (don't run)</a></li>
         </ul>
-
     </li>
     <li class="dropdown">
         <a href="#">Seatworks</a>
@@ -41,6 +42,15 @@
                 <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_2.php')">Quiz 1.2</a></li>
                 <li><a href="#" onclick="changeFrame('quizzes/QM1/ELECT2_QM1_3.php')">Quiz 1.3</a></li>
             </ul>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#">Exam</a>
+
+        <!-- DROPDOWN MENU -->
+        <ul class="dropdown-menu">
+            <li><a href="#" onclick="changeFrame('exam/midterm/ELECT2_ME36.php')">ME No. 36</a></li>
+            <li><a href="#" onclick="changeFrame('exam/midterm/ELECT2_ME37.php')">ME No. 37</a></li>
         </ul>
     </li>
     <li class="dropdown">
